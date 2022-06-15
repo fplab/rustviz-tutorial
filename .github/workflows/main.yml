@@ -33,7 +33,7 @@ jobs:
           if: success()
           uses: crazy-max/ghaction-github-pages@v2
           with:
-            target_branch: gh-pages
+            target_branch: master
             build_dir: book
             keep_history: true
           env:
