@@ -1,0 +1,12 @@
+# Standalone RustViz Tutorial Setup
+
+This page contains an introductory Rust tutorial which contains visualizations
+generated with [RustViz](https://github.com/fplab/rustviz). It is intended to be
+used in the Rust unit in EECS 490 at the University of Michigan.
+
+## Github Hosted page for Rustviz setup
+ 
+### Github actions automates loading the website.
+Workflow created to add, build or test every change to the repository.
+
+- The page will conditionally compile for EECS490 LOGGING 
