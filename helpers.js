@@ -168,9 +168,9 @@ const SVG = {
           : SVG[tgt.tagName];
   
       // console.log(e_label);
-      import * as LOGGING from 'logging.js';
+      // import * as LOGGING from 'logging.js';
 
-      if (LOGGING){
+      // if (LOGGING){
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "/action/hover", true); // could add authentification info
         xhr.setRequestHeader("Content-Type", "application/json");
@@ -180,7 +180,7 @@ const SVG = {
             hover_item: e_label
           })
         );
-      }
+      // }
       // console.log(xhr);
   
       tooltip.style.display = "none";
