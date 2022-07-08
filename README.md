@@ -2,7 +2,7 @@
 
 RustViz is a tool that generates interactive visualizations from simple Rust programs to assist users in better understanding the Rust Lifetime and Borrowing mechanism.
 
-RustViz is a project of the Future of Programming Lab at the University of Michigan. Check on the [rustviz tutorial](https://fplab.github.io/rustviz-tutorial/).
+RustViz is a project of the Future of Programming Lab at the University of Michigan. Check out fplab's [rustviz tutorial](https://fplab.github.io/rustviz-tutorial/).
 
 
 # Installation to create a new tutrial book:
