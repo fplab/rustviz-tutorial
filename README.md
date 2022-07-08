@@ -9,13 +9,13 @@ cargo install mdbook
 ```
 
 ## From Source
-    1. Clone this repo and have an empty book. 
+1. Clone this repo and have an empty book. 
 
 ```
 git clone https://github.com/Serenali-1108/my-first-book.git
 ```
 
-    2. Steps to create an example:
+2. Steps to create an example:
 
 1. Write source code in Rust (Source.rs). For example，in source.rs:
 
@@ -41,7 +41,7 @@ fn main() {
 } */
 ```
 
-    3. Supply the annotated file to DSL Processor to get the svg:  vis_code.svg and vis_timeline.svg, which is a section is the rustviz repo README (will have another section expanding on this)
+3. Supply the annotated file to DSL Processor to get the svg:  vis_code.svg and vis_timeline.svg, which is a section is the rustviz repo README (will have another section expanding on this)
 
 ![Screen Shot 2022-06-27 at 11 46 52 AM](https://github.com/rustviz/rustviz/blob/master/src/examples/copy/vis_code.svg)
 
