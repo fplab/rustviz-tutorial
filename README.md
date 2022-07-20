@@ -49,9 +49,10 @@ fn main() {
    ```
 rustviz path/to/folder
 ```
- ![Screen Shot 2022-06-27 at 11 46 52 AM](https://github.com/rustviz/rustviz/blob/master/src/examples/copy/vis_code.svg)
+![Screen Shot 2022-06-27 at 11 46 52 AM](https://github.com/rustviz/rustviz/blob/master/src/examples/copy/vis_code.svg)
 
 ![Screen Shot 2022-06-27 at 11 46 52 AM](https://github.com/rustviz/rustviz/blob/master/src/examples/copy/vis_timeline.svg)
+   
    Note: make sure folder svg_generator is in the current folder when running the code 
    The two svg files will be saved in the current folder.
 
@@ -71,7 +72,8 @@ Your Parent folder
 # Include the examples in your book
 
 First, navigate to SUMAARY.md in folder src. SUMMARY is the directory of the book that could redirect to multiple files when rendering. 
-    An example is done for creating a new chapter, My First Chapter, where the source code are contained in the my-first-chapter.md.
+
+An example is done for creating a new chapter, My First Chapter, where source code are contained in the my-first-chapter.md.
 
 To include one svg file, refer to it by:
 
@@ -82,5 +84,13 @@ To include one svg file, refer to it by:
    
 More SVG rendering could be found [here](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Getting_Started).
 
+
+# Build your book
+
+Finally, build your mdbook and check out the book at http://localhost:3000/.
+```
+mdbook build 
+mdbook serve -p 3000
+```
 
 
