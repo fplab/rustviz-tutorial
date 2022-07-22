@@ -80,12 +80,14 @@ Your Parent folder
 
 # Include the examples in your book
 
-Again navigate to SUMAARY.md in folder src. To include one svg file, refer to it by:
+Again navigate to SUMAARY.md in folder src. To include one svg file, refer to it by following:
 
 ```
-<object type="image/svg+xml" class="YOUR_EXAMPLE code_panel" data="YOUR_SVG.svg"></object>
+<object type="image/svg+xml" class="YOUR_EXAMPLE code_panel" data="path/to/YOUR_SVG.svg"></object>
 ```
-   Note: Example of additional mouse hovering feature is also included in the sample code in My First Chapter.
+   
+  Note: Example of additional mouse hovering feature is also included in the sample code in My First Chapter. 
+   
 
 An example is done for creating a new example in My First Chapter, where source code are contained in the my-first-chapter.md.
 
