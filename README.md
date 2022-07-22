@@ -22,6 +22,8 @@ git clone -b user_designed_book https://github.com/fplab/rustviz-tutorial.git
 
 # Steps to create an example:
 
+Create a folder under src/examples.
+
    i. Write source code in Rust (Source.rs). For example，in a file source.rs:
 
 ```
@@ -68,7 +70,8 @@ Your Parent folder
 ├── vis_code.svg
 └── vis_timeline.svg
 ```
-
+ 
+ 
 # Include the examples in your book
 
 First, navigate to SUMAARY.md in folder src. SUMMARY is the directory of the book that could redirect to multiple files when rendering. 
