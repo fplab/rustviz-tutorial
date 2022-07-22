@@ -1,4 +1,4 @@
-# Customize Rustviz tutorial 
+# Design Your Rustviz tutorial 
 
 RustViz is a tool that generates interactive visualizations from simple Rust programs to assist users in better understanding the Rust Lifetime and Borrowing mechanism.
 
@@ -17,7 +17,7 @@ cargo install mdbook
 1. Clone this repo and have an empty book. 
 
 ```
-git clone https://github.com/fplab/rustviz-tutorial.git
+git clone -b user_designed_book https://github.com/fplab/rustviz-tutorial.git
 ```
 
 # Steps to create an example:
