@@ -3,7 +3,27 @@
 // Fix back button cache problem
 window.onunload = function () {};
 
-(function addAnalytics() {
+window.addEventListener("load", 
+  function() {
+    addAnalytics();
+    codeSnippets();
+    themes();
+    sidebar();
+    chapterNavigation();
+    clipboard();
+    scrollToTop();
+    let elements = document.getElementsByClassName("flex-container vis_block");
+    for (const element of elements) {
+        // console.log(element);
+        adjust_visualization_size(element);
+    }
+    // for (element of elements) {
+    //     console.log(element);
+    //     // adjust_visualization_size(element);
+    // }
+});
+
+function addAnalytics() {
     let s = document.createComment(" Global site tag (gtag.js) - Google Analytics for RustViz ");
     document.head.append(s);
 
@@ -24,7 +44,7 @@ window.onunload = function () {};
         page_path: location.pathname,
         page_title: document.title
     });
-})();
+};
 
 // Global variable, shared between modules
 function playpen_text(playpen) {
@@ -48,18 +68,22 @@ function adjust_visualization_size(flexbox) {
     let timeline_width = parseInt(timeline_doc.width.baseVal.value);
     let desired_height = parseInt(timeline_doc.height.baseVal.value);
     let code_panel_doc = flexbox.querySelector('object[class*="code_panel"]').contentDocument.querySelector('svg');
-    let code_panel_width = parseInt(code_panel_doc.width.baseVal.value);
+    // let code_panel_width = parseInt(code_panel_doc.width.baseVal.value);
+    // let code_width = svg_doc.getElementById('code').getBBox().width;
+    let code_width = code_panel_doc.getBBox().width
+    let code_panel_width = Math.max(code_width + 30, 400);
+    // code_panel_doc.getBBox().width = code_panel_width;
 
     // update the div block that surround them with the new width
     // Rule: if the two panels combined are narrower than the main text, simply set to the text width
     // Otherwise, do a "center" effect.
-    var butt = document.getElementsByClassName("buttons")[0];
+    // var butt = document.getElementsByClassName("buttons")[0];
     let margin = 0;
     if (text_width >= timeline_width + code_panel_width) {
         flexbox.style.marginLeft = "0px";
         margin = text_width-timeline_width-code_panel_width;
         flexbox.style.marginRight = margin + "px";
-        butt.setAttribute("style", "position: absolute; right: " + margin + "px;");
+        // butt.setAttribute("style", "position: absolute; right: " + margin + "px;");
     } else {
         let wiggle_room = parseInt("3px");                      // manually tweak this to prevent subpixel splitting
         let margin_shrink = (timeline_width + code_panel_width + flex_border_size + wiggle_room - text_width) / 2;
@@ -70,7 +94,7 @@ function adjust_visualization_size(flexbox) {
     return margin;
 }
 
-(function codeSnippets() {
+function codeSnippets() {
     function fetch_with_timeout(url, options, timeout = 6000) {
         return Promise.race([
             fetch(url, options),
@@ -386,9 +410,9 @@ function adjust_visualization_size(flexbox) {
             });
         }
     });
-})();
+};
 
-(function themes() {
+function themes() {
     var html = document.querySelector('html');
     var themeToggleButton = document.getElementById('theme-toggle');
     var themePopup = document.getElementById('theme-list');
@@ -521,9 +545,9 @@ function adjust_visualization_size(flexbox) {
                 break;
         }
     });
-})();
+};
 
-(function sidebar() {
+function sidebar() {
     var html = document.querySelector("html");
     var sidebar = document.getElementById("sidebar");
     var sidebarScrollBox = document.querySelector(".sidebar-scrollbox");
@@ -627,9 +651,9 @@ function adjust_visualization_size(flexbox) {
     if (activeSection) {
         sidebarScrollBox.scrollTop = activeSection.offsetTop;
     }
-})();
+};
 
-(function chapterNavigation() {
+function chapterNavigation() {
     document.addEventListener('keydown', function (e) {
         if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) { return; }
         if (window.search && window.search.hasFocus()) { return; }
@@ -651,9 +675,9 @@ function adjust_visualization_size(flexbox) {
                 break;
         }
     });
-})();
+};
 
-(function clipboard() {
+function clipboard() {
     var clipButtons = document.querySelectorAll('.clip-button');
 
     function hideTooltip(elem) {
@@ -688,17 +712,17 @@ function adjust_visualization_size(flexbox) {
     clipboardSnippets.on('error', function (e) {
         showTooltip(e.trigger, "Clipboard error!");
     });
-})();
+};
 
-(function scrollToTop () {
+function scrollToTop () {
     var menuTitle = document.querySelector('.menu-title');
 
     menuTitle.addEventListener('click', function () {
         document.scrollingElement.scrollTo({ top: 0, behavior: 'smooth' });
     });
-})();
+};
 
-(function controllMenu() {
+function controllMenu() {
     var menu = document.getElementById('menu-bar');
 
     (function controllPosition() {
@@ -754,4 +778,4 @@ function adjust_visualization_size(flexbox) {
             }
         }, { passive: true });
     })();
-})();
+};
