@@ -28,7 +28,7 @@ jobs:
         - run: sh copy_assets.sh
         - run: mv githubLogging.js logging.js
         - run: cargo install mdbook
-        - run: mdbook build
+#         - run: mdbook build
         - name: rust project
           if: success()
           uses: crazy-max/ghaction-github-pages@v2
