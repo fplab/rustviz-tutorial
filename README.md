@@ -55,14 +55,14 @@ iii. Put the source.rs and main.rs in the same parent folder, then run follwoing
    ```
 rustviz path/to/folder
 ```
-vis_code.svg:
+
 ![Screen Shot 2022-06-27 at 11 46 52 AM](https://github.com/rustviz/rustviz/blob/master/src/examples/copy/vis_code.svg)
 
-vis_timeline.svg:
+
 ![Screen Shot 2022-06-27 at 11 46 52 AM](https://github.com/rustviz/rustviz/blob/master/src/examples/copy/vis_timeline.svg)
 
    
-   Note: make sure folder svg_generator is in the current folder when running the code 
+> Note: make sure folder svg_generator is in the current folder when running the code 
    The two svg files will be saved in the current folder.
 
 iv. Lastly, provide annotated_source.rs (hope to make it automatically generated) that renders the visual feature of variables, and save it in a separate folder called input, under the parent folder
