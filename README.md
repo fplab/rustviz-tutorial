@@ -1,4 +1,4 @@
-# Customize Rustviz tutorial 
+# Design Your Rustviz tutorial 
 
 RustViz is a tool that generates interactive visualizations from simple Rust programs to assist users in better understanding the Rust Lifetime and Borrowing mechanism.
 
@@ -22,12 +22,18 @@ git clone -b user_designed_book https://github.com/fplab/rustviz-tutorial.git
 
 2. To start writing your own tutorial, first navigate to SUMAARY.md in folder src. SUMMARY is the directory of the book that display all the chapters, and redirect to the files for chapters when rendering. Indicate different chapters/sub-chapters by including their corresponding markdown file names in SUMMARY.md. 
 
+<<<<<<< HEAD
 
 # Steps to create a visualization example:
 
 Rustviz generate svg files, given annotated rust code, for visualization.
 
 i. Write your rsource code in Rust (Source.rs). For example，in a file source.rs:
+=======
+Create a folder under src/examples.
+
+   i. Write source code in Rust (Source.rs). For example，in a file source.rs:
+>>>>>>> 6a3411259dfa173a6b753dff15cbce657074668f
 
 ```
 fn main() {
@@ -77,7 +83,8 @@ Your Parent folder
 ├── vis_code.svg
 └── vis_timeline.svg
 ```
-
+ 
+ 
 # Include the examples in your book
 
 Again navigate to SUMAARY.md in folder src. To include one svg file, refer to it by:
