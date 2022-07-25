@@ -8,7 +8,7 @@ use std::io;
 
 pub fn render_code_panel(
     annotated_lines: io::Lines<io::BufReader<File>>,
-    // lines: io::Lines<io::BufReader<File>>,
+    lines: io::Lines<io::BufReader<File>>,
     max_x_space: &mut i64,
     event_line_map: &BTreeMap<usize, Vec<ExternalEvent>>,
 ) -> (String, i32) {
@@ -24,11 +24,11 @@ pub fn render_code_panel(
         .is_ok());
     
     // figure out that max length
-    // for line in lines {
-    //     if let Ok(line_string) = line {
-    //         *max_x_space = max(line_string.len() as i64, *max_x_space);
-    //     }
-    // }
+    for line in lines {
+        if let Ok(line_string) = line {
+            *max_x_space = max(line_string.len() as i64, *max_x_space);
+        }
+    }
     
     /* Render the code segment of the svg to a String */
     let x = 20;
