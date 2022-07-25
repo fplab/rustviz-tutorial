@@ -128,9 +128,6 @@ pub fn render_svg(
         height: (num_lines * LINE_SPACE as i32 + 80) + 50,
     };
 
-    println!("'{}'", num_lines); 
-    println!("'{}'", LINE_SPACE); 
-
     let final_code_svg_content = handlebars.render("code_svg_template", &svg_data).unwrap();
     let final_timeline_svg_content = handlebars
         .render("timeline_svg_template", &svg_data)

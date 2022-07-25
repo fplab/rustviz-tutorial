@@ -2,7 +2,7 @@
 use std::path::{Path};
 use std::{
     env, 
-    collections::BTreeMap,
+    collections::BTreeMap
 };
 // svg_generator
 mod parse;
@@ -33,15 +33,14 @@ fn main() {
         raw_path = &args[2];
         path_to_ex = Path::new(&raw_path);
         raw_output_path = &args[4];
-        path_to_output = Path::new(&raw_output_path);
-        // println!("'{}'", path_to_ex.display()); 
-        // println!("'{}'", path_to_output.display()); 
+        path_to_output = Path::new(&raw_output_path);   
     }
 
     if !path_to_ex.is_dir() {
         println!("Error: no corresponding directory exists in examples/!");
         return;
     }
+
 
     let filename = path_to_ex.join("main.rs");
     if !Path::new(&filename).is_file() {
@@ -74,7 +73,5 @@ fn main() {
     let output_path = path_to_output
         .as_os_str().to_str().map(|s| s.to_string())
         .expect("Error in output file path!");
-        println!("'{}'", input_path); 
-        println!("'{}'", output_path); 
     svg_generation::render_svg(&input_path, &(output_path+"/"), &mut vd);
 }
