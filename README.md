@@ -90,7 +90,7 @@ Your Parent folder
  
 # Include the examples in your book
 
-2. To start writing your own tutorial, first navigate to SUMAARY.md in folder build_book/src. SUMMARY is the directory of the book that display all the chapters, and redirect to the files for chapters when rendering. Indicate different chapters/sub-chapters by including their corresponding markdown file names in SUMMARY.md. 
+ To start writing your own book, first navigate to SUMAARY.md in folder build_book/src. SUMMARY is the directory of the book that display all the chapters, and redirect to the files for chapters when rendering. Indicate different chapters/sub-chapters by including their corresponding markdown file names in SUMMARY.md. 
 
 ```
 # Summary
