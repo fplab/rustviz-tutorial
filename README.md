@@ -74,7 +74,7 @@ cargo run path/to/folder
 
 ![Screen Shot 2022-06-27 at 11 46 52 AM](https://github.com/rustviz/rustviz/blob/master/src/examples/copy/vis_timeline.svg)
   
-> Note: make sure folder svg_generator is in the current folder when running the code 
+> Note: make sure folder svg_generator is in the same folder as you are running the code 
 
 
 Now your folder for one example should look like this:
