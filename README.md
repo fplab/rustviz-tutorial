@@ -8,10 +8,7 @@ Check out fplab's [rustviz tutorial](https://fplab.github.io/rustviz-tutorial/).
 
 # Installation to create a new tutorial book:
 
-First Install mdbook.
-```
-cargo install mdbook
-```
+Creeating a new book requires [Rust](https://www.rust-lang.org/), [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) and [mdbook](https://github.com/rust-lang/mdBook) to be installed.
 
 ## From Source
 1. Clone the branch user_designed_book of this repo and have an empty book with some sample code. 
@@ -19,7 +16,6 @@ cargo install mdbook
 ```
 git clone -b user_designed_book https://github.com/fplab/rustviz-tutorial.git
 ```
-
 
 
 # Steps to create a visualization example:
@@ -53,8 +49,8 @@ fn main() {
 } */
 ```
 
-iii. Provide annotated_source.rs that renders the visual feature of variables, and save it in a separate folder called input inside current folder.
-
+iii. Provide annotated_source.rs that renders the visual feature of variables.
+In other words, set the color of your variables by setting different values to data-hash. Simple example below sets variable x and y to two different colors.
 ```
 # annotated_source.rs
 
@@ -64,9 +60,9 @@ fn main() {
 }
 ```
 
-iv. Lastly, put the source.rs in input folder, and main.rs remains in the curent folder, then run follwoing to generate the svg files: vis_code.svg and vis_timeline.svg. Run:
+iv. Lastly, put the source.rs and annotated_source.rs in a separate folder called input inside your current folder. And main.rs remains in the current folder, then run following to generate and save the svg files in current folder: vis_code.svg and vis_timeline.svg. Run:
 ```
-cargo run path/to/folder
+cargo run path/to/current_folder
 ```
 
 ![Screen Shot 2022-06-27 at 11 46 52 AM](https://github.com/rustviz/rustviz/blob/master/src/examples/copy/vis_code.svg)
@@ -74,12 +70,12 @@ cargo run path/to/folder
 
 ![Screen Shot 2022-06-27 at 11 46 52 AM](https://github.com/rustviz/rustviz/blob/master/src/examples/copy/vis_timeline.svg)
   
-> Note: make sure folder svg_generator is in the same folder as you are running the code 
+> Note: make sure folder svg_generator is in the same folder as where you are when running the code 
 
 
 Now your folder for one example should look like this:
 ```
-Your Parent folder
+Your Current folder
 ├── input
 │   └── annotated_source.rs
     └── source.rs
@@ -88,10 +84,18 @@ Your Parent folder
 └── vis_timeline.svg
 ```
  
+Arbitrary input path and output path are also be provided to generate vis_code.svg and vis_timeline.svg in a separate folder. 
+
+```
+cargo run i path/to/input_folder o path/to/output_folder
+```
+
+
 # Include the examples in your book
 
- To start writing your own book, first navigate to SUMAARY.md in folder build_book/src. SUMMARY is the directory of the book that display all the chapters, and redirect to the files for chapters when rendering. Indicate different chapters/sub-chapters by including their corresponding markdown file names in SUMMARY.md. 
+To start writing your own tutorial, navigate to SUMAARY.md in folder build_book/src. SUMMARY is the directory of the book that display all the chapters, and redirect to the files for chapters when rendering. Indicate different chapters/sub-chapters by including their corresponding markdown file in SUMMARY.md. 
 
+Refer to chapter_1.md for content in My First Chapter.
 ```
 # Summary
 
@@ -100,15 +104,16 @@ Your Parent folder
     - [Sub-chapter](nested/sub-chapter.md)
 ```
 
-To include one svg file, refer to it by:
+To include one svg file:
 
 ```
 <object type="image/svg+xml" class="YOUR_EXAMPLE code_panel" data="YOUR_SVG.svg"></object>
 ```
 
-An example is done for creating a new example in My First Chapter, source code are contained in the chapter_1.md.
+> Note: Apply mouse hovering feature by proving event name to onmouseenter.
 
-> Note: Additional mouse hovering feature and nested chapters  also included
+An example is done for creating a new example in chapter_1.md.
+
 
 More SVG rendering feature could be found [here](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Getting_Started).
 
@@ -116,6 +121,9 @@ More SVG rendering feature could be found [here](https://developer.mozilla.org/e
 # Build your book
 
 Finally, build your own mdbook, then check out the book at http://localhost:3000/
+
+First navigate to build_book folder, then:
+
 ```
 mdbook build 
 mdbook serve -p 3000
